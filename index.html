@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV (77143) - Yahor Dziamyanenka</title>
+    <title>CV (77143) - Yahor Dziamyanenka </title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="green-theme">
+
+    <div class="controls" style="text-align: center; margin-top: 20px;">
+        <button id="theme-button">Zmień motyw (Red/Green)</button>
+        <button id="toggle-section-button">Ukryj/Pokaż Projekty</button>
+    </div>
 
     <header>
         <h1>Yahor Dziamyanenka</h1>
@@ -39,11 +44,10 @@
                 <p><em>Różne kluby sportowe | 2014 – obecnie</em></p>
                 <p>Dwanaście lat występów na poziomie profesjonalnym. Praca w konkurencyjnym środowisku, wymagającym codziennych treningów, strategicznego myślenia oraz szybkiego podejmowania decyzji na lodzie.</p>
             </article>
-
             <article>
                 <h3>Specjalista ds. sprzętu i oprogramowania</h3>
                 <p><em>Projekty niezależne | 2022 – obecnie</em></p>
-                <p>Samodzielne składanie stacji roboczych, dobór podzespołów, instalacja systemów operacyjnych i rozwiązywanie problemów technicznych z oprogramowaniem i sprzętem.</p>
+                <p>Samodzielne składanie stacji roboczych, dobór podzespołów, instalacja systemów operacyjnych i rozwiązywanie problemów technicznych.</p>
             </article>
         </section>
 
@@ -51,7 +55,7 @@
             <h2>Umiejętności</h2>
             <ul>
                 <li><strong>Języki obce:</strong> polski, rosyjski, białoruski, niemiecki, angielski, litewski</li>
-                <li><strong>Programowanie:</strong> znajomość języka C# (tworzenie aplikacji w Windows Forms)</li>
+                <li><strong>Programowanie:</strong> znajomość języka C# (Windows Forms)</li>
                 <li><strong>Hardware:</strong> zaawansowana wiedza w zakresie budowy i diagnostyki sprzętu PC</li>
                 <li><strong>Kompetencje miękkie:</strong> praca w zespole, samodyscyplina sportowa</li>
             </ul>
@@ -66,16 +70,42 @@
         <section id="projekty">
             <h2>Projekty</h2>
             <ul>
-                <li><strong>Aplikacja narzędziowa w C#:</strong> Samodzielnie zaprojektowana aplikacja okienkowa (Windows Forms).</li>
-                <li><strong>Custom PC Build:</strong> Projekt i montaż zaawansowanej jednostki komputerowej.</li>
+                <li><strong>Aplikacja narzędziowa в C#:</strong> Projekt Windows Forms.</li>
+                <li><strong>Custom PC Build:</strong> Projekt и montaż zaawansowanej jednostki komputerowej.</li>
             </ul>
+        </section>
+
+        <section id="kontakt-form">
+            <h2>Napisz do mnie</h2>
+            <form id="contactForm" novalidate>
+                <div class="input-group">
+                    <input type="text" id="firstName" placeholder="Imię" required>
+                    <span id="firstNameError" class="error-msg"></span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="lastName" placeholder="Nazwisko" required>
+                    <span id="lastNameError" class="error-msg"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <span id="emailError" class="error-msg"></span>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" placeholder="Wiadomość" required></textarea>
+                    <span id="messageError" class="error-msg"></span>
+                </div>
+                <button type="submit">Wyślij wiadomość</button>
+                <p id="successMsg" style="color: green; display: none; font-weight: bold; margin-top: 10px;">
+                    Wiadomość została poprawnie zwalidowana!
+                </p>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Yahor Dziamyanenka | Nr indeksu: 77143</p>
-        <p>Projekt wykonany na potrzeby zajęć "Wprowadzenie do technologii internetowych".</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
