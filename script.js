@@ -1,4 +1,5 @@
 /* Autor: Yahor Dziamyanenka | Nr indeksu: 77143 */
+//Zadanie 4
 document.getElementById('theme-button').addEventListener('click', () => {
     document.body.classList.toggle('green-theme');
     document.body.classList.toggle('red-theme');
@@ -15,6 +16,7 @@ document.getElementById('toggle-section-button').addEventListener('click', funct
     }
 });
 
+//Zadanie 5
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     let isValid = true;
@@ -50,4 +52,36 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         document.getElementById('successMsg').style.display = 'block';
         this.reset();
     }
+});
+
+//Zadanie 6
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Błąd sieci lub brak pliku JSON');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const skillsList = document.getElementById('skills-list');
+            const projectsList = document.getElementById('projects-list');
+
+            // umiejetnosci
+            data.skills.forEach(skill => {
+                const li = document.createElement('li');
+                li.innerHTML = skill; // innerHTML zachowuje tagi <strong>
+                skillsList.appendChild(li);
+            });
+
+            // projekty
+            data.projects.forEach(project => {
+                const li = document.createElement('li');
+                li.innerHTML = project;
+                projectsList.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Błąd podczas pobierania danych z JSON:', error);
+        });
 });
