@@ -32,3 +32,24 @@ body.red-theme { font-family: 'Georgia', serif; background: #fff5f5; }
 .red-theme h2, .red-theme a { color: #c0392b; }
 .red-theme header img { border-radius: 10%; border: 4px solid #c0392b; }
 .red-theme ul li { background: #fdf2f2; border-left: 5px solid #c0392b; border-radius: 0; }
+/* Zadanie 7: Notatki*/
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    float: right;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: 0.3s;
+}
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+#notesList li {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
